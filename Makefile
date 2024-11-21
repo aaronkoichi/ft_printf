@@ -17,7 +17,7 @@ $(NAME): $(OBJS) $(LIB)
 	cc $(CFLAGS) -c $< -o $@
 
 clean : 
-	rm -rf $(OBJS) 
+	rm -rf $(OBJS)
 	cd libft && make clean
 
 fclean : clean
