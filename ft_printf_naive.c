@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:13:23 by zlee              #+#    #+#             */
-/*   Updated: 2024/11/21 09:30:53 by zlee             ###   ########.fr       */
+/*   Updated: 2024/11/21 15:39:34 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int	ft_printf(const char *s, ...)
 				ft_put_base_low(va_arg(list_params, unsigned int), s[i + 1]);
 			else if (s[i + 1] == 'p')
 				ft_putvoid(va_arg(list_params, void *));
+			else if (s[i + 1] == '%')
+				ft_putchar_fd('%', 1);
 		}
 	}
 	va_end(list_params);
