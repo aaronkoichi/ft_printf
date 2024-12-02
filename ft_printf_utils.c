@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:31:04 by zlee              #+#    #+#             */
-/*   Updated: 2024/11/27 10:11:24 by zlee             ###   ########.fr       */
+/*   Updated: 2024/12/02 13:39:56 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	ft_putlong(unsigned long num)
 	int	count;
 
 	count = 0;
-	while (num > 9)
+	if (num > 9)
 		count += ft_putlong(num / 10);
-	ft_putchar_fd(num % 10 + 48, 1);
+	ft_putchar_fd((num % 10) + 48, 1);
 	return (count + 1);
 }
 
