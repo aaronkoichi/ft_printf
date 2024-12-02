@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:43:20 by zlee              #+#    #+#             */
-/*   Updated: 2024/12/02 13:57:07 by zlee             ###   ########.fr       */
+/*   Updated: 2024/12/02 14:15:44 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,12 @@ int	ft_process_symbol_two(va_list list_params, char sym)
 
 	count = 0;
 	temp = 0;
-	if (sym == 'd' || sym == 'i')
+	if (sym == 'p')
+	{
+		count = ft_putvoid(va_arg(list_params, void *));
+		return (count);
+	}
+	else if (sym == 'd' || sym == 'i')
 	{
 		temp = va_arg(list_params, int);
 		ft_putnbr_fd(temp, 1);
@@ -84,13 +89,10 @@ int	ft_process_symbol_one(va_list list_params, char sym)
 	else if (sym == 's')
 	{
 		temp = va_arg(list_params, char *);
+		if (temp == NULL)
+			temp = "(null)";
 		ft_putstr_fd(temp, 1);
 		return (ft_strlen(temp));
-	}
-	else if (sym == 'p')
-	{
-		count = ft_putvoid(va_arg(list_params, void *));
-		return (count);
 	}
 	else
 		return (ft_process_symbol_two(list_params, sym));
