@@ -6,13 +6,13 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:43:20 by zlee              #+#    #+#             */
-/*   Updated: 2024/12/02 13:46:26 by zlee             ###   ########.fr       */
+/*   Updated: 2024/12/02 13:50:26 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_base_low(unsigned int num, char cap)
+int	ft_put_base_low(unsigned long num, char cap)
 {
 	int		count;
 
@@ -37,7 +37,7 @@ int	ft_putvoid(void *ptr)
 
 	index = 0;
 	ft_putstr_fd("0x", 1);
-	index = ft_put_base_low(*(unsigned int *)&ptr, 'x');
+	index = ft_put_base_low(*(unsigned long *)&ptr, 'x');
 	return (index + 2);
 }
 
