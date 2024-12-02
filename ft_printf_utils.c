@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:31:04 by zlee              #+#    #+#             */
-/*   Updated: 2024/12/02 13:56:56 by zlee             ###   ########.fr       */
+/*   Updated: 2024/12/02 14:07:54 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_put_base_low_long(unsigned long num, char cap)
 
 	count = 0;
 	if (num > 15)
-		count += ft_put_base_low(num / 16, cap);
+		count += ft_put_base_low_long(num / 16, cap);
 	if (cap == 'x')
 	{
 		ft_putchar_fd("0123456789abcdef"[num % 16], 1);
