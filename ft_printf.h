@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:35:50 by zlee              #+#    #+#             */
-/*   Updated: 2024/12/02 13:50:52 by zlee             ###   ########.fr       */
+/*   Updated: 2024/12/02 14:00:20 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ int	count_digit(int n);
 int	ft_process_symbol_one(va_list list_params, char sym);
 int	ft_process_symbol_two(va_list list_params, char sym);
 int	ft_putvoid(void *ptr);
-int	ft_put_base_low(unsigned int long, char cap);
+int	ft_put_base_low(unsigned int num, char cap);
+int	ft_put_base_low_long(unsigned long num, char cap);
 #endif

@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:31:04 by zlee              #+#    #+#             */
-/*   Updated: 2024/12/02 13:39:56 by zlee             ###   ########.fr       */
+/*   Updated: 2024/12/02 13:56:56 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,23 @@ int	count_digit(int n)
 		count++;
 	}
 	return (count);
+}
+
+int	ft_put_base_low_long(unsigned long num, char cap)
+{
+	int		count;
+
+	count = 0;
+	if (num > 15)
+		count += ft_put_base_low(num / 16, cap);
+	if (cap == 'x')
+	{
+		ft_putchar_fd("0123456789abcdef"[num % 16], 1);
+		return (count + 1);
+	}
+	else
+	{
+		ft_putchar_fd("0123456789ABCDEF"[num % 16], 1);
+		return (count + 1);
+	}
 }
