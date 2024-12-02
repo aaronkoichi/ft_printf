@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:43:20 by zlee              #+#    #+#             */
-/*   Updated: 2024/12/02 12:19:35 by zlee             ###   ########.fr       */
+/*   Updated: 2024/12/02 13:07:41 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,23 @@ int	ft_putvoid(void *ptr)
 
 int	ft_process_symbol_two(va_list list_params, char sym)
 {
-	void	*temp;
+	int		temp;
 	int		count;
 
 	count = 0;
-	temp = NULL;
+	temp = 0;
 	if (sym == 'd' || sym == 'i')
 	{
-		*(int *)temp = va_arg(list_params, int);
-		ft_putnbr_fd(*(int *)temp, 1);
-		count = count_digit(*(int *)temp);
+		temp = va_arg(list_params, int);
+		ft_putnbr_fd(temp, 1);
+		count = count_digit(temp);
 	}
 	else if (sym == 'u')
 		count = ft_putlong(va_arg(list_params, unsigned int));
 	else if (sym == 'x' || sym == 'X')
 		count = ft_put_base_low(va_arg(list_params, unsigned long), sym);
+	else if (sym == '%')
+		ft_putchar_fd('%', ++count);
 	return (count);
 }
 
@@ -105,7 +107,7 @@ int	ft_printf(const char *s, ...)
 			if (s[i + 1] == 'c' || s[i + 1] == 's' || s[i + 1] == 'p'
 				|| s[i + 1] == 'd' || s[i + 1] == 'i' || s[i + 1] == 'u'
 				|| s[i + 1] == 'x' || s[i + 1] == 'X' || s[i + 1] == '%')
-				total += ft_process_symbol_one(list_params, s[i]);
+				total += ft_process_symbol_one(list_params, s[i + 1]);
 			i += 2;
 		}
 		else
