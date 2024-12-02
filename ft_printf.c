@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:43:20 by zlee              #+#    #+#             */
-/*   Updated: 2024/12/02 14:15:44 by zlee             ###   ########.fr       */
+/*   Updated: 2024/12/02 14:19:42 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,7 @@ int	ft_process_symbol_two(va_list list_params, char sym)
 int	ft_process_symbol_one(va_list list_params, char sym)
 {
 	char	*temp;
-	int		count;
 
-	count = 0;
 	temp = NULL;
 	if (sym == 'c')
 	{
