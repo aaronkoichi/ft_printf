@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 18:27:15 by zlee              #+#    #+#             */
-/*   Updated: 2024/11/11 09:18:35 by zlee             ###   ########.fr       */
+/*   Created: 2024/11/26 16:31:04 by zlee              #+#    #+#             */
+/*   Updated: 2024/11/27 10:11:24 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putlong(unsigned long num)
 {
-	if (n == -2147483648)
-	{
-		write(fd, "-2147483648", 11);
-		return ;
-	}
+	int	count;
+
+	count = 0;
+	while (num > 9)
+		count += ft_putlong(num / 10);
+	ft_putchar_fd(num % 10 + 48, 1);
+	return (count + 1);
+}
+
+int	count_digit(int n)
+{
+	int	count;
+
+	count = 1;
 	if (n < 0)
 	{
-		write(fd, "-", 1);
 		n = -n;
+		count++;
 	}
-	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
-	ft_putchar_fd(n % 10 + 48, fd);
+	while (n > 9)
+	{
+		n = n / 10;
+		count++;
+	}
+	return (count);
 }
-//
-//int	main(void)
-//{
-	//ft_putnbr_fd(12121212, 1);
-//}

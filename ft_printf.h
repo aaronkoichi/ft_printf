@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 16:08:24 by zlee              #+#    #+#             */
-/*   Updated: 2024/11/20 16:18:27 by zlee             ###   ########.fr       */
+/*   Created: 2024/11/26 14:35:50 by zlee              #+#    #+#             */
+/*   Updated: 2024/11/27 10:12:44 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,11 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 
-int	ft_printf(const char *, ...);
+int	ft_printf(const char *str, ...);
+int	ft_putlong(unsigned long num);
+int	count_digit(int n);
+int	ft_process_symbol_one(va_list list_params, char sym, int *index);
+int	ft_process_symbol_two(va_list list_params, char sym, int **index);
+int	ft_putvoid(void *ptr);
+int	ft_put_base_low(unsigned int num, char cap);
 #endif
