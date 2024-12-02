@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:43:20 by zlee              #+#    #+#             */
-/*   Updated: 2024/11/27 10:10:39 by zlee             ###   ########.fr       */
+/*   Updated: 2024/12/02 12:19:35 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_putvoid(void *ptr)
 	return (index + 2);
 }
 
-int	ft_process_symbol_two(va_list list_params, char sym, int **index)
+int	ft_process_symbol_two(va_list list_params, char sym)
 {
 	void	*temp;
 	int		count;
@@ -61,7 +61,7 @@ int	ft_process_symbol_two(va_list list_params, char sym, int **index)
 	return (count);
 }
 
-int	ft_process_symbol_one(va_list list_params, char sym, int *index)
+int	ft_process_symbol_one(va_list list_params, char sym)
 {
 	char	*temp;
 	int		count;
@@ -85,7 +85,7 @@ int	ft_process_symbol_one(va_list list_params, char sym, int *index)
 		return (count);
 	}
 	else
-		return (ft_process_symbol_two(list_params, sym, &index));
+		return (ft_process_symbol_two(list_params, sym));
 	return (0);
 }
 
@@ -105,7 +105,7 @@ int	ft_printf(const char *s, ...)
 			if (s[i + 1] == 'c' || s[i + 1] == 's' || s[i + 1] == 'p'
 				|| s[i + 1] == 'd' || s[i + 1] == 'i' || s[i + 1] == 'u'
 				|| s[i + 1] == 'x' || s[i + 1] == 'X' || s[i + 1] == '%')
-				total += ft_process_symbol_one(list_params, s[i], &i);
+				total += ft_process_symbol_one(list_params, s[i]);
 			i += 2;
 		}
 		else
