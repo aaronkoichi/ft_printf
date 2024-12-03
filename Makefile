@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 12:10:45 by zlee              #+#    #+#              #
-#    Updated: 2024/12/03 08:27:40 by zlee             ###   ########.fr        #
+#    Updated: 2024/12/03 11:05:57 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,5 +40,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY: all clean fclean
-
+.PHONY: all clean fclean re
