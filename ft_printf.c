@@ -6,7 +6,7 @@
 /*   By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:43:20 by zlee              #+#    #+#             */
-/*   Updated: 2024/12/02 14:19:42 by zlee             ###   ########.fr       */
+/*   Updated: 2024/12/03 12:25:42 by zlee             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,12 +108,12 @@ int	ft_printf(const char *s, ...)
 	total = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == '%')
-		{
-			if (s[i + 1] == 'c' || s[i + 1] == 's' || s[i + 1] == 'p'
+		if (s[i] == '%' && (s[i + 1] == 'c' || s[i + 1] == 's'
+				|| s[i + 1] == 'p'
 				|| s[i + 1] == 'd' || s[i + 1] == 'i' || s[i + 1] == 'u'
-				|| s[i + 1] == 'x' || s[i + 1] == 'X' || s[i + 1] == '%')
-				total += ft_process_symbol_one(list_params, s[i + 1]);
+				|| s[i + 1] == 'x' || s[i + 1] == 'X' || s[i + 1] == '%'))
+		{
+			total += ft_process_symbol_one(list_params, s[i + 1]);
 			i += 2;
 		}
 		else
