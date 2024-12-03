@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 12:10:45 by zlee              #+#    #+#              #
-#    Updated: 2024/12/03 08:25:47 by zlee             ###   ########.fr        #
+#    Updated: 2024/12/03 08:27:40 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ clean:
 	rm -f $(OBJS)
 
 fclean : clean
-	make -C libft/ fclean
+	cd libft/ && rm -f libft.a
 	rm -f $(NAME)
 
 re : fclean all
