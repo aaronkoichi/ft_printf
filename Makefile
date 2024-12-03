@@ -6,7 +6,7 @@
 #    By: zlee <zlee@student.42kl.edu.my>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 12:10:45 by zlee              #+#    #+#              #
-#    Updated: 2024/12/02 12:18:04 by zlee             ###   ########.fr        #
+#    Updated: 2024/12/03 08:25:47 by zlee             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ CC = cc
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	make -C libft/ all
+	make -C libft/ bonus
 	cp libft/libft.a $(NAME)
 	ar rcs $(NAME) $(OBJS)
 
